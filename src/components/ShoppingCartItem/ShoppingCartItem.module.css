@@ -1,0 +1,18 @@
+.img {
+  width: 125px;
+  height: 75px;
+  object-fit: cover;
+}
+
+.symbol {
+  font-size: 0.5rem;
+}
+
+.unit-price {
+  font-size: 0.7rem;
+}
+
+.total-price {
+  font-size: 1rem;
+}
+
