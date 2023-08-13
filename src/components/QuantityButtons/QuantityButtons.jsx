@@ -7,14 +7,13 @@ const QuantityButtons = ({
   id,
   quantity,
   size='md',
-  fontSize='md',
-  variant='none'
+  fontSize='fs-3',
+  variant=''
 }) => {
   const {
     increaseCartQuantity,
     decreaseCartQualtity
   } = useShoppingCartContext();
-
 
   return (
     <div className={`${styles.gap} ${styles.btns} d-flex align-items-center flex-column`}>
@@ -27,7 +26,7 @@ const QuantityButtons = ({
           - 
         </Button>
         
-        <span className={fontSize === 'md' ? 'fs-4' : 'fs-8'}>{ quantity }</span>
+        <span className={fontSize}>{ quantity }</span>
 
         <Button
           size={size}  

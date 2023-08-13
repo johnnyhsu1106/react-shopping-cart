@@ -25,14 +25,15 @@ const ShoppingCartProvider = ({ children }) => {
   
   const increaseCartQuantity = (id) => {
     setCartItems((currCartItems) => {
+        // found if targetItem in the cart
         const targetItem = currCartItems.find((currCartItem) => {
           return currCartItem.id === id;
         });
-
+        // if target item is not found, add new shopping item
         if (!targetItem) {
           return [...currCartItems, {id, quantity : 1}];
         }
-
+        // if target item is found, update its quantity
         return currCartItems.map((currCartItem) => {
           if (currCartItem.id === id) {
             return {id,  quantity: currCartItem.quantity + 1};
@@ -47,15 +48,15 @@ const ShoppingCartProvider = ({ children }) => {
       const targetItem = currCartItems.find((currCartItem) => {
         return currCartItem.id === id;
       });
-
+      // the target item must be in the cart
       const { quantity } = targetItem;
-    
+      // if quantity is 1, remove target item from shopping cart
       if (quantity === 1) {
         return currCartItems.filter((currCartItem) => {
           return currCartItem.id !== id;
         });
       }
-
+      // if quantity > 1, update its quantity
       return currCartItems.map((currCartItem) => {
         if (currCartItem.id === id) {
           return {...currCartItem, quantity: currCartItem.quantity - 1};
@@ -92,11 +93,12 @@ const ShoppingCartProvider = ({ children }) => {
     openShoppingCart,
     closeShoppingCart
   };
-
+  // place <ShoppingCart /> inside ShoppingCartProvider
+  // because those pages, which are children, should have shopping cart component.
   return (
     <ShoppingCartContext.Provider value={value}>
       {children}
-      <ShoppingCart />
+      <ShoppingCart /> 
     </ShoppingCartContext.Provider>
   )
 }

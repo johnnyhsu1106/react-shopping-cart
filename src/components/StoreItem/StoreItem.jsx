@@ -22,14 +22,14 @@ const StoreItem = ({
   const renderStoreItemBtns = (quantity) => {
     if (quantity === 0) {
       return (
-      <Button 
-        className='w-100'
-        variant='outline-secondary' 
-        size='sm'
-        onClick={() => { increaseCartQuantity(id) }}
-      > 
-        Add To Cart
-      </Button>
+        <Button 
+          className='w-100'
+          variant='outline-secondary' 
+          size='sm'
+          onClick={() => { increaseCartQuantity(id) }}
+        > 
+          Add To Cart
+        </Button>
       );
     }
 
@@ -37,7 +37,8 @@ const StoreItem = ({
       <QuantityButtons 
         id={id} 
         quantity={quantity}
-        variant='outline-secondary' 
+        variant='outline-secondary'
+        fontSize='fs-5' 
       />
     );
   };
@@ -50,7 +51,7 @@ const StoreItem = ({
         vairant='top'
         src={imgUrl}
         alt={name}
-       />
+      />
        
        <Card.Body className='d-flex flex-column'>
         

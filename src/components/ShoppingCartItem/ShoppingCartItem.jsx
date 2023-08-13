@@ -56,7 +56,7 @@ const ShoppingCartItem = ({
         direction='vertical'
       >
         <div className={styles['total-price']}> {formatCurrency(price * quantity)}</div>
-        <QuantityButtons id={id} quantity={quantity} size='sm' fontSize='sm' />
+        <QuantityButtons id={id} quantity={quantity} size='sm' fontSize='fs-6' />
       </Stack>
 
       <Button
