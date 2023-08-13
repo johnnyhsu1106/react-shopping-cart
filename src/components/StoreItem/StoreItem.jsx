@@ -14,9 +14,7 @@ const StoreItem = ({
 
   const {
     getItemQuantity,
-    increaseCartQuantity, 
-    decreaseCartQualtity, 
-    removeItemFromCart
+    increaseCartQuantity
   } = useShoppingCartContext();
 
   const quantity = getItemQuantity(id);
@@ -26,11 +24,11 @@ const StoreItem = ({
       return (
       <Button 
         className='w-100'
-        variant='dark' 
+        variant='outline-primary' 
         size='sm'
         onClick={() => { increaseCartQuantity(id) }}
       > 
-        Add To Car
+        Add To Cart
       </Button>
       );
     }
