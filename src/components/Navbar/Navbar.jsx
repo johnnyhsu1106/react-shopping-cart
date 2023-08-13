@@ -2,7 +2,7 @@ import { Button, Container, Nav, Navbar as NavBs } from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
 import { useShoppingCartContext } from '../../context/ShoppingCartContext';
 
-import ShoppingCartLogo from '../../../public/shopping-cart.svg';
+import ShoppingCartLogo from '../../../public/images/shopping-cart.svg';
 import styles from './Navbar.module.css';
 
 
@@ -15,16 +15,16 @@ const Navbar = () => {
   return (
     <NavBs
       sticky='top' 
-      className='bg-white shadow-sm mb-3'>
+      className='bg-black shadow-sm mb-3'>
       <div className={styles.btn}></div>
       <Container>
         <Nav className='me-auto'>
-          <Nav.Link to='/' as={NavLink}>Home</Nav.Link>
-          <Nav.Link to='/store' as={NavLink}>Store</Nav.Link>
-          <Nav.Link to='/about' as={NavLink}>About</Nav.Link>
+          <Nav.Link className='text-light' to='/' as={NavLink}>Home</Nav.Link>
+          <Nav.Link className='text-light' to='/store' as={NavLink}>Store</Nav.Link>
+          <Nav.Link className='text-light' to='/about' as={NavLink}>About</Nav.Link>
         </Nav>
         <Button 
-          className={`${styles.btn} rounded-circle`} 
+          className={`${styles.btn} rounded-circle bg-white`} 
           variant='outline-secondary'
           onClick={openShoppingCart}
         >
