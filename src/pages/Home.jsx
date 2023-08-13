@@ -1,7 +1,13 @@
+import HomepageBackground from '../../public/images/appe_homepage.png'
 
 const Home = () => {
   return (
-    <h1>Home</h1>
+ 
+    <img
+      className='rounded mx-auto d-block w-100' 
+      src={HomepageBackground} 
+      alt="apple store background" 
+    />
   )
 }
 

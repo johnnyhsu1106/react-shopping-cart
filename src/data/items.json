@@ -22,5 +22,17 @@
     "name": "Apple Watch",
     "price": 399,
     "imgUrl": "/images/applewatch.jpg"
+  },
+  {
+    "id": 5,
+    "name": "iPad Air",
+    "price": 699,
+    "imgUrl": "/images/ipad_air.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Apple TV 4K",
+    "price": 129,
+    "imgUrl": "/images/apple_tv.jpg"
   }
 ]
