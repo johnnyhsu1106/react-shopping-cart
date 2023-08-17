@@ -36,10 +36,7 @@ const ShoppingCartProvider = ({ children }) => {
         }
         // if target item is found, update its quantity
         return currCartItems.map((currCartItem) => {
-          if (currCartItem.id === id) {
-            return {id,  quantity: currCartItem.quantity + 1};
-          }
-          return currCartItem;
+          return currCartItem.id === id ? {id,  quantity: currCartItem.quantity + 1} : currCartItem;
         });
     });
   };
@@ -59,10 +56,7 @@ const ShoppingCartProvider = ({ children }) => {
       }
       // if quantity > 1, update its quantity
       return currCartItems.map((currCartItem) => {
-        if (currCartItem.id === id) {
-          return {...currCartItem, quantity: currCartItem.quantity - 1};
-        } 
-        return currCartItem;
+        return currCartItem.id === id ? {...currCartItem, quantity: currCartItem.quantity - 1} : currCartItem;
       });
     });
   };
