@@ -1,5 +1,5 @@
 import { Stack } from 'react-bootstrap';
-import { ShoppingCartItem } from '../ShoppingCartItem/ShoppingCartItem';
+import { ShoppingCartItem } from './ShoppingCartItem';
 
 import { useShoppingCartContext } from '../../context/ShoppingCartContext';
 import storeItems from '../../data/items.json';

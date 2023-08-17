@@ -2,8 +2,6 @@ import { Card } from 'react-bootstrap';
 
 import { StoreItemBtns } from './StoreItemBtns';
 
-import { useShoppingCartContext } from '../../context/ShoppingCartContext';
-
 import { formatCurrency } from '../../utilities/formatCurrency';
 
 import styles from './StoreItem.module.css';
