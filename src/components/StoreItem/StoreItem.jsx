@@ -24,7 +24,7 @@ const StoreItem = ({
       return (
         <Button 
           className='w-100'
-          variant='outline-secondary' 
+          variant='outline-dark' 
           size='sm'
           onClick={() => { increaseCartQuantity(id) }}
         > 
