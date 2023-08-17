@@ -9,6 +9,7 @@ const formatCurrency = (num) => {
 
 const convertStoreItemsArrayToMap = (storeItems) => {
   const storeItemsMap = new Map();
+
   storeItems.forEach((storeItem) => {
     const { id, ...itemData } = storeItem;
     storeItemsMap.set(id, itemData);
