@@ -45,7 +45,7 @@ const ShoppingCartItem = ({
         alt={name}
       />
       <div className='me-auto'>
-        <div> {name} </div>
+        <div className='fs-6'> {name} </div>
         <div className={`text-muted ${styles['unit-price']}`}>
           {formatCurrency(price)}
         </div>
