@@ -32,7 +32,7 @@ const ShopoingCartItemList = () => {
       })}
 
     <div className="ms-auto fw-bold fs-5">  
-      Total{" "} {calculateTotalPrice()}
+      Total:{" "} {calculateTotalPrice()}
     </div>
   </Stack>
   )
