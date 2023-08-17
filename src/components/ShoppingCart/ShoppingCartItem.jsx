@@ -4,7 +4,8 @@ import { QuantityButtons } from '../share/QuantityButtons/QuantityButtons';
 
 import { useShoppingCartContext } from '../../context/ShoppingCartContext';
 
-import { formatCurrency } from '../../utilities/formatCurrency';
+import { formatCurrency } from '../../utilities/utils';
+
 import storeItems from '../../data/items.json';
 
 import styles from './ShoppingCartItem.module.css'

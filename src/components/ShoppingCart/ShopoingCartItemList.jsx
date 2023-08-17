@@ -1,20 +1,19 @@
 import { Stack } from 'react-bootstrap';
 import { ShoppingCartItem } from './ShoppingCartItem';
-
 import { useShoppingCartContext } from '../../context/ShoppingCartContext';
+import { formatCurrency, convertStoreItemsArrayToMap } from '../../utilities/utils';
 import storeItems from '../../data/items.json';
+import { useMemo } from 'react';
 
-import { formatCurrency } from '../../utilities/formatCurrency';
 
 const ShopoingCartItemList = () => {
 
   const { cartItems } = useShoppingCartContext();
+  const storeItemMap = convertStoreItemsArrayToMap(storeItems);
 
-  const calculateTotalPrice = () => {
+  const totalPrice = useMemo(() => {
     const totalPrice = cartItems.reduce((totalPrice, cartItem) => {
-      const targetItem = storeItems.find((storeItem) => {
-        return storeItem.id === cartItem.id;
-      });
+      const targetItem = storeItemMap.get(cartItem.id);
 
       const { quantity } = cartItem;
       const { price } = targetItem;
@@ -23,7 +22,9 @@ const ShopoingCartItemList = () => {
     }, 0);
 
     return formatCurrency(totalPrice);
-  }
+
+  }, [cartItems]);
+  
   
   return (
     <Stack gap={3}>
@@ -32,7 +33,7 @@ const ShopoingCartItemList = () => {
       })}
 
     <div className="ms-auto fw-bold fs-5">  
-      Total:{" "} {calculateTotalPrice()}
+      Total:{" "} {totalPrice}
     </div>
   </Stack>
   )
