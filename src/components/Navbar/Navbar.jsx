@@ -14,12 +14,11 @@ const Navbar = () => {
   return (
     <NavbarBs
       sticky='top' 
-      className='bg-black shadow-sm mb-3'>
+      className='bg-black shadow-sm mb-5'>
       <div className={styles.btn}></div>
       <Container>
         <Nav className='me-auto'>
-          <Nav.Link className='text-light' to='/' as={NavLink}>Home</Nav.Link>
-          <Nav.Link className='text-light' to='/store' as={NavLink}>Store</Nav.Link>
+          <Nav.Link className='text-light' to='/' as={NavLink}>Store</Nav.Link>
           <Nav.Link className='text-light' to='/about' as={NavLink}>About</Nav.Link>
         </Nav>
         <Button 
