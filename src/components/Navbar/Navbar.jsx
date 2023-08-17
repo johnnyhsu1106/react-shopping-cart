@@ -27,10 +27,11 @@ const Navbar = () => {
           onClick={openShoppingCart}
         >
           <img src={ShoppingCartLogo} alt='shopping cart logo' />
-          
-          <div className={`${styles.icon} rounded-circle bg-primary d-flex justify-content-center align-item-center`}>
-            {cartQuantity}
-          </div>
+          {cartQuantity !== 0 && 
+            <div className={`${styles.icon} rounded-circle bg-primary d-flex justify-content-center align-item-center`}>
+              {cartQuantity}
+            </div>
+          }
         </Button>        
       </Container>
     </NavbarBs>
