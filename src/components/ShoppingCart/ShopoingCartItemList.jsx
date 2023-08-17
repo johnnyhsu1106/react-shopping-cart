@@ -9,11 +9,19 @@ import { useMemo } from 'react';
 const ShopoingCartItemList = () => {
 
   const { cartItems } = useShoppingCartContext();
+
+  if (cartItems.length === 0) {
+    return <p> Your cart is empty</p>
+  }
   const storeItemMap = convertStoreItemsArrayToMap(storeItems);
 
   const totalPrice = useMemo(() => {
     const totalPrice = cartItems.reduce((totalPrice, cartItem) => {
       const targetItem = storeItemMap.get(cartItem.id);
+      if (!targetItem) {
+        return totalPrice;
+      }
+      
       const { quantity } = cartItem;
       const { price } = targetItem;
     
