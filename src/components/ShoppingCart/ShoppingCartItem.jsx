@@ -16,6 +16,8 @@ const ShoppingCartItem = ({
   quantity
 }) => {
 
+  const { removeItemFromCart } = useShoppingCartContext();
+
   const cartItem = storeItems.find((storeItem) => {
     return storeItem.id === id;
   });
@@ -30,10 +32,6 @@ const ShoppingCartItem = ({
     imgUrl
   } = cartItem;
 
-  const {
-    removeItemFromCart
-  } = useShoppingCartContext();
-
   return (
     <Stack 
       className='d-flex align-items-center'
@@ -46,7 +44,9 @@ const ShoppingCartItem = ({
         alt={name}
       />
       <div className='me-auto'>
-        <div className='fs-6'> {name} </div>
+        <div className='fs-6'> 
+          {name}
+        </div>
         <div className={`text-muted ${styles['unit-price']}`}>
           {formatCurrency(price)}
         </div>
@@ -56,8 +56,9 @@ const ShoppingCartItem = ({
         className='d-flex align-items-center justify-content-center'
         direction='vertical'
       >
-        <div className={styles['total-price']}> {formatCurrency(price * quantity)}</div>
         <QuantityButtons id={id} quantity={quantity} size='sm' fontSize='fs-6' />
+        <div className={styles['total-price']}> {formatCurrency(price * quantity)}</div>
+    
       </Stack>
 
       <Button

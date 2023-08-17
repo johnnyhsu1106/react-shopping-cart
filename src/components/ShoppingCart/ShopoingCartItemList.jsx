@@ -14,7 +14,6 @@ const ShopoingCartItemList = () => {
   const totalPrice = useMemo(() => {
     const totalPrice = cartItems.reduce((totalPrice, cartItem) => {
       const targetItem = storeItemMap.get(cartItem.id);
-
       const { quantity } = cartItem;
       const { price } = targetItem;
     
@@ -25,7 +24,7 @@ const ShopoingCartItemList = () => {
 
   }, [cartItems]);
   
-  
+
   return (
     <Stack gap={3}>
       {cartItems.map((cartItem) => {
