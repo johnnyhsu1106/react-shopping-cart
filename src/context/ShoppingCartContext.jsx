@@ -8,6 +8,7 @@ const useShoppingCartContext = () => {
   return useContext(ShoppingCartContext);
 };
 
+
 const ShoppingCartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useLocalStorage('CARTITEMS', []);
   const [isShoppingCartOpen, setIsShoppingCartOpen] = useState(false);
