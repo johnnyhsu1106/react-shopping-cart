@@ -13,6 +13,7 @@ const StoreItemBtns = ({ id }) => {
   const quantity = getItemQuantity(id);
   
   if (quantity === 0) {
+    
     return (
       <Button 
         className='w-100'
