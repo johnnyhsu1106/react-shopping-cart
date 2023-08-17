@@ -11,8 +11,8 @@ const ShoppingCartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [isShoppingCartOpen, setIsShoppingCartOpen] = useState(false);
 
-  const cartQuantity = cartItems.reduce((totalQuantity, item) => {
-    return totalQuantity + item.quantity;
+  const cartQuantity = cartItems.reduce((totalQuantity, cartItem) => {
+    return totalQuantity + cartItem.quantity;
   }, 0);
 
 
