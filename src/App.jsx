@@ -9,7 +9,6 @@ import './App.css';
 
 
 const App = () => {
-
   return (
     <>
       <ShoppingCartProvider>
@@ -23,8 +22,6 @@ const App = () => {
         </Container>
       </ShoppingCartProvider>
     </>
-
-    
   )
 }
 
