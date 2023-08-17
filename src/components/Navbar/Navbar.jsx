@@ -2,7 +2,7 @@ import { Button, Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
 import { useShoppingCartContext } from '../../context/ShoppingCartContext';
 
-import ShoppingCartLogo from '../../../images/shopping-cart.svg';
+import ShoppingCartLogo from '/images/shopping-cart.svg';
 import styles from './Navbar.module.css';
 
 
