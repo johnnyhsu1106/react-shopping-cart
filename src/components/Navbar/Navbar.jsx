@@ -1,4 +1,4 @@
-import { Button, Container, Nav, Navbar as NavBs } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
 import { useShoppingCartContext } from '../../context/ShoppingCartContext';
 
@@ -13,7 +13,7 @@ const Navbar = () => {
    } = useShoppingCartContext();
 
   return (
-    <NavBs
+    <NavbarBs
       sticky='top' 
       className='bg-black shadow-sm mb-3'>
       <div className={styles.btn}></div>
@@ -35,7 +35,7 @@ const Navbar = () => {
           </div>
         </Button>        
       </Container>
-    </NavBs>
+    </NavbarBs>
   )
 }
 
