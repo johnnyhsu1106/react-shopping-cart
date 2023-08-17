@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { ShoppingCart } from '../components/ShoppingCart/ShoppingCart';
 
 const ShoppingCartContext = createContext();
@@ -14,6 +14,7 @@ const ShoppingCartProvider = ({ children }) => {
   const cartQuantity = cartItems.reduce((totalQuantity, item) => {
     return totalQuantity + item.quantity;
   }, 0);
+
 
   const getItemQuantity = (id) => {
     const targetItem = cartItems.find((cartItem) => {

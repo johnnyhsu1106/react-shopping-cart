@@ -1,8 +1,11 @@
-import { Card, Button } from 'react-bootstrap';
-import { QuantityButtons } from '../QuantityButtons/QuantityButtons';
+import { Card } from 'react-bootstrap';
+
+import { StoreItemBtns } from './StoreItemBtns';
 
 import { useShoppingCartContext } from '../../context/ShoppingCartContext';
+
 import { formatCurrency } from '../../utilities/formatCurrency';
+
 import styles from './StoreItem.module.css';
 
 const StoreItem = ({
@@ -12,38 +15,7 @@ const StoreItem = ({
   imgUrl
 }) => {
 
-  const {
-    getItemQuantity,
-    increaseCartQuantity
-  } = useShoppingCartContext();
-
-  const quantity = getItemQuantity(id);
   
-  const renderStoreItemBtns = (quantity) => {
-    if (quantity === 0) {
-      return (
-        <Button 
-          className='w-100'
-          variant='outline-dark' 
-          size='sm'
-          onClick={() => { increaseCartQuantity(id) }}
-        > 
-          Add To Cart
-        </Button>
-      );
-    }
-
-    return (
-      <QuantityButtons 
-        id={id} 
-        quantity={quantity}
-        variant='outline-secondary'
-        fontSize='fs-5' 
-      />
-    );
-  };
-
-
   return (
     <Card className='h-100'>
       <Card.Img
@@ -61,7 +33,7 @@ const StoreItem = ({
         </Card.Title>
 
         <div className='mt-auto'>
-          {renderStoreItemBtns(quantity)}
+          <StoreItemBtns id={id}/>
         </div>
 
        </Card.Body>
