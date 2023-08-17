@@ -1,4 +1,3 @@
-
 import WorkInProcessImg from '/images/work_in_process.jpg';
 
 

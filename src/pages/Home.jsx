@@ -1,5 +1,6 @@
 import HomepageBackground from '/images/appe_homepage.png'
 
+
 const Home = () => {
   return (
     <img
