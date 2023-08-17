@@ -7,6 +7,10 @@ Checkout this repo, install dependencies, then start the gulp process with the f
 > npm dev
 ```
 
-![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/024175d1-f24b-4415-a008-f6b3493408d5)
-![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/bd30a815-fb29-42b6-a97c-7912575ffc04)
-![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/87741606-9aa6-4509-9de8-fe50fb6af8c4)
+![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/67d46817-6231-4c5d-ad32-6edea8afc4c3)
+![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/fdc19196-526e-429b-a408-41596837c591)
+
+![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/76ea2bad-385b-4884-88e8-9c6c759db897)
+![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/60c5f68e-5e66-4286-9d85-97530832e1b5)
+
+![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/898b6e12-c2d8-4de4-b9ff-a4e711cf73cf)
