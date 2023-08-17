@@ -1,6 +1,8 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useMemo, useState, useTransition } from 'react';
 import { ShoppingCart } from '../components/ShoppingCart/ShoppingCart';
 import { useLocalStorage } from '../hooks/useLocalStorage';
+import storeItems from '../data/items.json';
+
 
 const ShoppingCartContext = createContext();
 
@@ -10,14 +12,28 @@ const useShoppingCartContext = () => {
 
 
 const ShoppingCartProvider = ({ children }) => {
+  const [searchQuery, setSearchQuery] = useState('');
   const [cartItems, setCartItems] = useLocalStorage('CARTITEMS', []);
   const [isShoppingCartOpen, setIsShoppingCartOpen] = useState(false);
+
 
   const cartQuantity = cartItems.reduce((totalQuantity, cartItem) => {
     return totalQuantity + cartItem.quantity;
   }, 0);
 
 
+  const filteredStoreItems = useMemo(() => {
+    return storeItems.filter((storeItem) => {
+      return storeItem.name.toLowerCase().includes(searchQuery.toLowerCase());
+    }); 
+  }, [searchQuery]);
+
+
+  const searchStoreItems = (searchQuery) => {
+    setSearchQuery(searchQuery);
+  };
+
+ 
   const getItemQuantity = (id) => {
     const targetItem = cartItems.find((cartItem) => {
       return cartItem.id === id;
@@ -82,9 +98,12 @@ const ShoppingCartProvider = ({ children }) => {
   };
 
   const value = {
+    searchQuery,
+    filteredStoreItems,
     isShoppingCartOpen,
     cartQuantity,
     cartItems,
+    searchStoreItems,
     getItemQuantity,
     increaseCartQuantity, 
     decreaseCartQualtity, 
