@@ -52,7 +52,7 @@ const ShoppingCartItem = ({
       </div>
 
       <Stack
-        className='d-flex align-items-center'
+        className='d-flex align-items-center justify-content-center'
         direction='vertical'
       >
         <div className={styles['total-price']}> {formatCurrency(price * quantity)}</div>
