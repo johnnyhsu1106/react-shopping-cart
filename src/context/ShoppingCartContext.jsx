@@ -30,13 +30,14 @@ const ShoppingCartProvider = ({ children }) => {
         const targetItem = currCartItems.find((currCartItem) => {
           return currCartItem.id === id;
         });
+
         // if target item is not found, add new shopping item
         if (!targetItem) {
           return [...currCartItems, {id, quantity : 1}];
         }
         // if target item is found, update its quantity
         return currCartItems.map((currCartItem) => {
-          return currCartItem.id === id ? {id,  quantity: currCartItem.quantity + 1} : currCartItem;
+          return currCartItem.id === id ? {...currCartItem,  quantity: currCartItem.quantity + 1} : currCartItem;
         });
     });
   };
@@ -46,6 +47,7 @@ const ShoppingCartProvider = ({ children }) => {
       const targetItem = currCartItems.find((currCartItem) => {
         return currCartItem.id === id;
       });
+
       // the target item must be in the cart
       const { quantity } = targetItem;
       // if quantity is 1, remove target item from shopping cart
