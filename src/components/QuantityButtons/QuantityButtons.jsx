@@ -1,5 +1,5 @@
 import { Button } from 'react-bootstrap';
-import { useShoppingCartContext } from '../../../context/ShoppingCartContext';
+import { useShoppingCartContext } from '../../context/ShoppingCartContext';
 import styles from './QuantityButtons.module.css';
 
 
