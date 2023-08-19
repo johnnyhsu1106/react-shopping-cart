@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 const useLocalStorage = (key, initialValue) => {
 
-  const [localStorageValue, setLocalStorageValue] = useState(() => {
+  const [value, setValue] = useState(() => {
     const jsonValue = localStorage.getItem(key);
 
     if (jsonValue !== null) {
@@ -14,10 +14,10 @@ const useLocalStorage = (key, initialValue) => {
   });
 
   useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(localStorageValue))
-  }, [key, localStorageValue]);
+    localStorage.setItem(key, JSON.stringify(value))
+  }, [key, value]);
 
-  return [localStorageValue, setLocalStorageValue];
+  return [value, setValue];
 };
 
 export { useLocalStorage };
