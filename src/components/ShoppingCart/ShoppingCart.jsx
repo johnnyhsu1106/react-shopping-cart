@@ -13,8 +13,8 @@ const ShoppingCart = () => {
     <Offcanvas 
       show={isShoppingCartOpen} 
       onHide={closeShoppingCart} 
-      placement='end'>
-  
+      placement='end'
+    >
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>Cart</Offcanvas.Title>
       </Offcanvas.Header>

@@ -1,6 +1,5 @@
 import {Col, Row } from 'react-bootstrap';
 import { StoreItem } from './StoreItem';
-import { SearchItems } from '../SearchItems/SearchItems';
 import { useShoppingCartContext } from '../../context/ShoppingCartContext';
 // import storeItems from '../../data//items.json';
 
@@ -10,17 +9,27 @@ const StoreItems = () => {
 
   return (
     <>
-      <SearchItems />
       <Row
         className='g-3' 
         lg={3} md={2} xs={1}
       >
         {filteredStoreItems.map((filteredStoreItem) => {
-          const { id } = filteredStoreItem;
+          const { 
+            id,
+            title,
+            price,
+            image
+          } = filteredStoreItem;
 
           return (
             <Col key={id}>
-              <StoreItem {...filteredStoreItem} /> 
+              <StoreItem
+                imgStyle='shop-style'
+                id={id}
+                title={title}
+                price={price}
+                image={image}  
+              /> 
             </Col>
             )
         })}

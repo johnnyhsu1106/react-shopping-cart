@@ -1,13 +1,8 @@
 
 import { Stack, Button } from 'react-bootstrap';
 import { QuantityButtons } from '../QuantityButtons/QuantityButtons';
-
 import { useShoppingCartContext } from '../../context/ShoppingCartContext';
-
 import { formatCurrency } from '../../utilities/utils';
-
-import storeItems from '../../data/items.json';
-
 import styles from './ShoppingCartItem.module.css'
 
 
@@ -15,8 +10,10 @@ const ShoppingCartItem = ({
   id, 
   quantity
 }) => {
-
-  const { removeItemFromCart } = useShoppingCartContext();
+  const { 
+    removeItemFromCart, 
+    storeItems 
+  } = useShoppingCartContext();
 
   const cartItem = storeItems.find((storeItem) => {
     return storeItem.id === id;
@@ -27,9 +24,9 @@ const ShoppingCartItem = ({
   }
 
   const {
-    name, 
+    title,
     price,
-    imgUrl
+    image,
   } = cartItem;
 
   return (
@@ -40,8 +37,8 @@ const ShoppingCartItem = ({
     >
       <img
         className={styles.img}
-        src={imgUrl}
-        alt={name}
+        src={image}
+        alt={title}
       />
       <div className='me-auto'>
         <div className='fs-6'> 

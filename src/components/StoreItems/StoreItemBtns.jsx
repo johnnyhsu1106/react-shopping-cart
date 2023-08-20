@@ -4,7 +4,6 @@ import { useShoppingCartContext } from '../../context/ShoppingCartContext';
 
 
 const StoreItemBtns = ({ id }) => {
-
   const { 
     getItemQuantity, 
     increaseCartQuantity 

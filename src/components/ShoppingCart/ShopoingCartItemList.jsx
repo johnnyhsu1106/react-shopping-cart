@@ -1,14 +1,15 @@
+import { useMemo } from 'react';
 import { Stack } from 'react-bootstrap';
 import { ShoppingCartItem } from './ShoppingCartItem';
 import { useShoppingCartContext } from '../../context/ShoppingCartContext';
 import { formatCurrency, convertStoreItemsArrayToMap } from '../../utilities/utils';
-import storeItems from '../../data/items.json';
-import { useMemo } from 'react';
 
 
 const ShopoingCartItemList = () => {
-
-  const { cartItems } = useShoppingCartContext();
+  const { 
+    cartItems,
+    storeItems
+   } = useShoppingCartContext();
 
   if (cartItems.length === 0) {
     return <p> Your cart is empty</p>

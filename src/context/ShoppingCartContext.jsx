@@ -1,7 +1,7 @@
-import { createContext, useContext, useMemo, useState } from 'react';
+import { createContext, useContext, useMemo, useState, useEffect } from 'react';
 import { ShoppingCart } from '../components/ShoppingCart/ShoppingCart';
 import { useLocalStorage } from '../hooks/useLocalStorage';
-import storeItems from '../data/items.json';
+import useFetchStoreItems from '../hooks/useFetchStoreItems';
 
 
 const ShoppingCartContext = createContext();
@@ -14,8 +14,8 @@ const useShoppingCartContext = () => {
 const ShoppingCartProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [cartItems, setCartItems] = useLocalStorage('CARTITEMS', []);
+  const [storeItems, setStoreItems] = useFetchStoreItems();
   const [isShoppingCartOpen, setIsShoppingCartOpen] = useState(false);
-
 
   const cartQuantity = cartItems.reduce((totalQuantity, cartItem) => {
     return totalQuantity + cartItem.quantity;
@@ -23,10 +23,14 @@ const ShoppingCartProvider = ({ children }) => {
 
 
   const filteredStoreItems = useMemo(() => {
+    if (searchQuery.trim() === '') {
+      return storeItems;
+    }
+
     return storeItems.filter((storeItem) => {
-      return storeItem.name.toLowerCase().includes(searchQuery.toLowerCase());
+      return storeItem.title.toLowerCase().includes(searchQuery.toLowerCase());
     }); 
-  }, [searchQuery]);
+  }, [searchQuery, storeItems]);
 
 
   const searchStoreItems = (searchQuery) => {
@@ -103,6 +107,7 @@ const ShoppingCartProvider = ({ children }) => {
     isShoppingCartOpen,
     cartQuantity,
     cartItems,
+    storeItems,
     searchStoreItems,
     getItemQuantity,
     increaseCartQuantity, 

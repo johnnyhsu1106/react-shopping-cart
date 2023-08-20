@@ -1,4 +1,5 @@
 import { Card } from 'react-bootstrap';
+import { Link, useLocation } from 'react-router-dom';
 import { StoreItemBtns } from './StoreItemBtns';
 import { formatCurrency } from '../../utilities/utils';
 import styles from './StoreItem.module.css';
@@ -6,24 +7,26 @@ import styles from './StoreItem.module.css';
 
 const StoreItem = ({
   id,
-  name,
+  title,
   price,
-  imgUrl
+  image
 }) => {
 
   return (
     <Card className='h-100'>
-      <Card.Img
-        className={`${styles.img}`}
-        vairant='top'
-        src={imgUrl}
-        alt={name}
-      />
+      <Link to={`product/${id}`}>
+        <Card.Img
+          className={`${styles.img}`}
+          vairant='top'
+          src={image}
+          alt={title}
+        />
+      </Link>
        
        <Card.Body className='d-flex flex-column'>
         
         <Card.Title className='d-flex justify-content-between align-items-baseline mb-4'>
-          <span className='fs-5'> {name} </span>
+          <span className='fs-5'> {title} </span>
           <span className='fs-6 ms-2 text-muted'> {formatCurrency(price)} </span>
         </Card.Title>
 

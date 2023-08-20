@@ -1,8 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
-import { Store } from './pages/Store';
-import { About } from './pages/About';
+import { StorePage } from './pages/StorePage';
+import { AboutPage } from './pages/AboutPage';
+import { ProductItemPage } from './pages/ProductItemPage'; 
+import { NotFoundPage } from './pages/NotFoundPage';
 import { Navbar } from './components/Navbar/Navbar';
+import { ProductItemContext } from './context/ProductContext';
 import { ShoppingCartProvider } from './context/ShoppingCartContext';
 import './App.css';
 
@@ -14,8 +17,12 @@ const App = () => {
       <Navbar />
         <Container className='mb-4'>
           <Routes>
-            <Route path='/' element={<Store />}></Route>
-            <Route path='about' element={<About />}></Route>
+            <Route path='/' element={<StorePage />} />
+            <Route path='product' element={<ProductItemContext />}>
+              <Route path=':id' element={<ProductItemPage />} />
+            </Route>
+            <Route path='about' element={<AboutPage />} />
+            <Route path='*'element={<NotFoundPage />} />
           </Routes>
         </Container>
       </ShoppingCartProvider>

@@ -1,7 +1,7 @@
 import WorkInProcessImg from '/images/work_in_process.jpg';
 
 
-const About = () => {
+const AboutPage = () => {
   return (
     <div className='d-flex align-items-center justify-content-center h-100 mt-5'>
       <img src={WorkInProcessImg} alt='work in process' />
@@ -9,4 +9,4 @@ const About = () => {
   )
 }
 
-export { About };
+export { AboutPage };
