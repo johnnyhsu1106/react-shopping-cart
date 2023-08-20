@@ -6,7 +6,7 @@ import { useShoppingCartContext } from './ShoppingCartContext';
 const ProductItemContext = () => {
   const { storeItems } = useShoppingCartContext();
   const { id } = useParams();
-  console.log('id ', id);
+
 
   const productItem = storeItems.find((storeItem) => {
     return storeItem.id === parseInt(id);
@@ -20,9 +20,9 @@ const ProductItemContext = () => {
   return <Outlet context={productItem} />
 }
 
-const useProductItem = () => {
+const useProductItemContext = () => {
   return useOutletContext();
 };
 
-export { useProductItem, ProductItemContext };
+export { useProductItemContext, ProductItemContext };
 

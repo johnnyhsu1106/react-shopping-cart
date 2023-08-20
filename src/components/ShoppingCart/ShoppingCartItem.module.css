@@ -8,8 +8,12 @@
   font-size: 0.5rem;
 }
 
-.unit-price {
+.title {
   font-size: 0.7rem;
+}
+
+.unit-price {
+  font-size: 0.8rem;
 }
 
 .total-price {

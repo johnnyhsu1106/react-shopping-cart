@@ -1,10 +1,8 @@
-import React from 'react'
+import { ProductItem } from '../components/ProductItem/ProductItem';
 
 const ProductItemPage = () => {
   return (
-    <div>
-      product item
-    </div>
+    <ProductItem />
   )
 }
 

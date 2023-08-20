@@ -1,5 +1,5 @@
 import { Card } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { StoreItemBtns } from './StoreItemBtns';
 import { formatCurrency } from '../../utilities/utils';
 import styles from './StoreItem.module.css';

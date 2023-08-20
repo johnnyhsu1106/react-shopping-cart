@@ -4,6 +4,7 @@ import { QuantityButtons } from '../QuantityButtons/QuantityButtons';
 import { useShoppingCartContext } from '../../context/ShoppingCartContext';
 import { formatCurrency } from '../../utilities/utils';
 import styles from './ShoppingCartItem.module.css'
+import { Link } from 'react-router-dom';
 
 
 const ShoppingCartItem = ({
@@ -34,20 +35,29 @@ const ShoppingCartItem = ({
       className='d-flex align-items-center'
       direction='horizontal' 
       gap={2} 
-    >
-      <img
-        className={styles.img}
-        src={image}
-        alt={title}
-      />
-      <div className='me-auto'>
-        <div className='fs-6'> 
-          {name}
-        </div>
-        <div className={`text-muted ${styles['unit-price']}`}>
-          {formatCurrency(price)}
-        </div>
-      </div>
+    > 
+      
+        <Link
+          className='text-decoration-none' 
+          to={`product/${id}`}>
+          <Stack gap={3}>
+      
+          <img
+            className={styles.img}
+            src={image}
+            alt={title}
+          />
+
+            <div className={`fs-6 ${styles.title} text-muted`}> 
+              {title}
+            </div>
+            
+            <div className={`${styles['unit-price']} text-muted`}>
+              {formatCurrency(price)}
+            </div>
+          </Stack>
+        </Link>
+      
 
       <Stack
         className='d-flex align-items-center justify-content-center'
