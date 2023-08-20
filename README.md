@@ -7,10 +7,9 @@ Checkout this repo, install dependencies, then start the gulp process with the f
 > npm dev
 ```
 
-![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/67d46817-6231-4c5d-ad32-6edea8afc4c3)
-![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/fdc19196-526e-429b-a408-41596837c591)
-
-![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/76ea2bad-385b-4884-88e8-9c6c759db897)
-![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/60c5f68e-5e66-4286-9d85-97530832e1b5)
-
-![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/898b6e12-c2d8-4de4-b9ff-a4e711cf73cf)
+![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/0e8d49ea-0990-4219-95f2-16bd3cf29690)
+![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/5a68d74b-88d1-4cb3-a240-626e97ac9681)
+![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/ef58a7b7-22b1-403a-b643-b8fe417bcef4)
+![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/6a6564f9-ee4f-4914-88f8-4154033e81fd)
+![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/408f2d07-0ece-4ec9-884f-4c36c18363de)
+![image](https://github.com/johnnyhsu1106/react-shopping-cart/assets/18588513/d8efc4b2-b54a-454a-bc8e-2828d7fd825c)
