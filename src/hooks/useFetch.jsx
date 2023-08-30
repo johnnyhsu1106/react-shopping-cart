@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
 
-const useFetchStoreItems = () => {
-  const [storeItems, setStoreItems] = useState([]);
+const useFetch = (url) => {
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products/')
+    fetch(url)
       .then((res) => {
         if (!res.ok) {
           throw new Error('Invalid Http Request');
@@ -13,15 +13,15 @@ const useFetchStoreItems = () => {
         return res.json();
       })
       .then((data) => {
-        setStoreItems(data);
+        setData(data);
       })
       .catch((err) => {
         console.err(err);
       })
   }, []);
 
-  return [storeItems, setStoreItems]
+  return [data, setData]
 }
 
 
-export default useFetchStoreItems;
+export default useFetch;
