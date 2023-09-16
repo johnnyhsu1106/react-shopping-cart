@@ -101,7 +101,7 @@ const ShoppingCartProvider = ({ children }) => {
     setIsShoppingCartOpen(false);
   };
 
-  const shoppingCartContext = {
+  const value = {
     searchQuery,
     filteredStoreItems,
     isShoppingCartOpen,
@@ -119,7 +119,7 @@ const ShoppingCartProvider = ({ children }) => {
   // place <ShoppingCart /> inside ShoppingCartProvider
   // because those pages, which are children, should have shopping cart component.
   return (
-    <ShoppingCartContext.Provider value={shoppingCartContext}>
+    <ShoppingCartContext.Provider value={value}>
       {children}
       <ShoppingCart /> 
     </ShoppingCartContext.Provider>
