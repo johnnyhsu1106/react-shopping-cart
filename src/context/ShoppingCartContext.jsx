@@ -37,7 +37,10 @@ const ShoppingCartProvider = ({ children }) => {
     setSearchQuery(searchQuery);
   };
 
- 
+  const clearSearchStoreItems = () => {
+    setSearchQuery('');
+  };
+
   const getItemQuantity = (id) => {
     const targetItem = cartItems.find((cartItem) => {
       return cartItem.id === id;
@@ -109,6 +112,7 @@ const ShoppingCartProvider = ({ children }) => {
     cartItems,
     storeItems,
     searchStoreItems,
+    clearSearchStoreItems,
     getItemQuantity,
     increaseCartQuantity, 
     decreaseCartQualtity, 
