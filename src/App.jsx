@@ -18,10 +18,10 @@ const App = () => {
         <Container className='mb-4'>
           <Routes>
             <Route path='/' element={<StorePage />} />
-            <Route path='product' element={<ProductItemContext />}>
+            <Route path='/product' element={<ProductItemContext />}>
               <Route path=':id' element={<ProductItemPage />} />
             </Route>
-            <Route path='about' element={<AboutPage />} />
+            <Route path='/about' element={<AboutPage />} />
             <Route path='*'element={<NotFoundPage />} />
           </Routes>
         </Container>
