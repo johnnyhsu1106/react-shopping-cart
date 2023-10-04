@@ -7,11 +7,11 @@ const FAKE_PRODUCTS_API = 'https://fakestoreapi.com/products/';
 const ShoppingCartContext = createContext();
 
 const useShoppingCartContext = () => {
-  const shoppingCart = useContext(ShoppingCartContext);
-  if (shoppingCart === undefined) {
+  const context = useContext(ShoppingCartContext);
+  if (context === undefined) {
     throw new Error('useShoppingCartContext must be used within ShoppingCartProvider');
   }
-  return shoppingCart;
+  return context;
 };
 
 
