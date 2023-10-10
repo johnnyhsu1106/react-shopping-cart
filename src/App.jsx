@@ -12,21 +12,19 @@ import './App.css';
 
 const App = () => {
   return (
-    <>
-      <ShoppingCartProvider>
+    <ShoppingCartProvider>
       <Navbar />
-        <Container className='mb-4'>
-          <Routes>
-            <Route path='/' element={<StorePage />} />
-            <Route path='/product' element={<ProductItemContext />}>
-              <Route path=':id' element={<ProductItemPage />} />
-            </Route>
-            <Route path='/about' element={<AboutPage />} />
-            <Route path='*'element={<NotFoundPage />} />
-          </Routes>
-        </Container>
-      </ShoppingCartProvider>
-    </>
+      <Container className='mb-4'>
+        <Routes>
+          <Route path='/' element={<StorePage />} />
+          <Route path='/product' element={<ProductItemContext />}>
+            <Route path=':id' element={<ProductItemPage />} />
+          </Route>
+          <Route path='/about' element={<AboutPage />} />
+          <Route path='*'element={<NotFoundPage />} />
+        </Routes>
+      </Container>
+    </ShoppingCartProvider>
   )
 }
 
