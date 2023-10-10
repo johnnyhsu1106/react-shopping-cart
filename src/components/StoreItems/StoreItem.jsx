@@ -17,7 +17,7 @@ const StoreItem = ({
       <Link to={`product/${id}`}>
         <Card.Img
           className={`${styles.img}`}
-          vairant='top'
+          variant='top'
           src={image}
           alt={title}
         />
