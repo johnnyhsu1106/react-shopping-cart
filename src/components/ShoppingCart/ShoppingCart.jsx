@@ -20,7 +20,6 @@ const ShoppingCart = () => {
       </Offcanvas.Header>
       
       <Offcanvas.Body>
-
         <ShopoingCartItemList />
       </Offcanvas.Body>
     </Offcanvas>
