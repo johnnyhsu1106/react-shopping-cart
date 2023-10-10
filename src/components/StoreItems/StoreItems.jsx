@@ -14,22 +14,11 @@ const StoreItems = () => {
         lg={3} md={2} xs={1}
       >
         {filteredStoreItems.map((filteredStoreItem) => {
-          const { 
-            id,
-            title,
-            price,
-            image
-          } = filteredStoreItem;
+          const { id } = filteredStoreItem;
 
           return (
             <Col key={id}>
-              <StoreItem
-                imgStyle='shop-style'
-                id={id}
-                title={title}
-                price={price}
-                image={image}  
-              /> 
+              <StoreItem {...filteredStoreItem} /> 
             </Col>
             )
         })}

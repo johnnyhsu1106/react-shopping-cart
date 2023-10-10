@@ -1,7 +1,7 @@
 import { createContext, useContext, useMemo, useState, useEffect } from 'react';
 import { ShoppingCart } from '../components/ShoppingCart/ShoppingCart';
 import { useLocalStorage } from '../hooks/useLocalStorage';
-import useFetchStoreItems from '../hooks/useFetch';
+import useFetch from '../hooks/useFetch';
 
 const FAKE_PRODUCTS_API = 'https://fakestoreapi.com/products/';
 const ShoppingCartContext = createContext();
@@ -18,7 +18,7 @@ const useShoppingCartContext = () => {
 const ShoppingCartProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [cartItems, setCartItems] = useLocalStorage('CARTITEMS', []);
-  const [storeItems, setStoreItems] = useFetchStoreItems(FAKE_PRODUCTS_API);
+  const [storeItems] = useFetch(FAKE_PRODUCTS_API);
   const [isShoppingCartOpen, setIsShoppingCartOpen] = useState(false);
 
   const cartQuantity = cartItems.reduce((totalQuantity, cartItem) => {
