@@ -18,7 +18,7 @@ const useShoppingCartContext = () => {
 const ShoppingCartProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [cartItems, setCartItems] = useLocalStorage('CARTITEMS', []);
-  const { data: storeItems } = useFetchData(FAKE_PRODUCTS_API);
+  const { data: storeItems, isLoading, isError } = useFetchData(FAKE_PRODUCTS_API);
   const [isShoppingCartOpen, setIsShoppingCartOpen] = useState(false);
 
   const cartQuantity = cartItems.reduce((totalQuantity, cartItem) => {
@@ -114,6 +114,8 @@ const ShoppingCartProvider = ({ children }) => {
     isShoppingCartOpen,
     cartQuantity,
     cartItems,
+    isLoading,
+    isError,
     storeItems,
     searchStoreItems,
     clearSearchStoreItems,

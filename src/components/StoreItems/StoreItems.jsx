@@ -5,7 +5,18 @@ import { useShoppingCartContext } from '../../context/ShoppingCartContext';
 
 
 const StoreItems = () => {
-  const { filteredStoreItems } = useShoppingCartContext();
+  const { 
+    filteredStoreItems,
+    isLoading,
+    isError 
+  } = useShoppingCartContext();
+
+  if (isLoading) {
+    return <p>Loading...</p>
+  }
+  if (isError) {
+    return <p>Something goes wrong...</p>
+  }
 
   return (
     <>
