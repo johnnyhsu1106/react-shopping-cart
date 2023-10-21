@@ -13,7 +13,7 @@ const StoreItems = () => {
         className='g-3' 
         lg={3} md={2} xs={1}
       >
-        {filteredStoreItems.map((filteredStoreItem) => {
+        {filteredStoreItems?.map((filteredStoreItem) => {
           const { id } = filteredStoreItem;
 
           return (
