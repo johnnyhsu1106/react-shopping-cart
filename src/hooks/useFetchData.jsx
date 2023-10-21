@@ -8,6 +8,8 @@ const useFetchData = (url) => {
   
   const fetchData = async () => {
     setIsLoading(true);
+    setIsError(false);
+
     try {
       const res = await fetch(url);
       const data = await res.json();
